@@ -1,0 +1,177 @@
+.hero {
+    min-height: 100vh;
+    
+    align-items: center;
+    padding: 40px 20px;
+    background: #f3f4f6;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+    align-items: stretch; /* يضمن تساوي الطول بين العمودين */
+}
+
+/* LEFT */
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* CARD */
+.auth-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* يحافظ على توزيع المحتوى */
+}
+
+.auth-card h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.text-navy {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.text-orange {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+/* FORM */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.auth-form input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 15px;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-bottom-color: var(--navy);
+}
+
+/* BUTTON */
+.primary-btn {
+    margin-top: 10px;
+    background: var(--navy);
+    color: #fff;
+    padding: 14px;
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+/* DIVIDER */
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* SOCIAL */
+.social-login {
+    display: flex;
+    gap: 10px;
+}
+
+.social {
+    flex: 1;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.social.google {
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    color: black;
+    justify-content: center;
+}
+
+.social.facebook {
+    background: #1877f2;
+    color: #fff;
+    border: none;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+}
+
+.social.apple {
+    background: #000;
+    color: #fff;
+    border: none;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RIGHT */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right img {
+    height: 100%;        /* نفس طول الفورم */
+    width: auto;
+    object-fit: cover;
+    border-radius: 18px;
+    max-width: none;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-right {
+        order: -1;
+        width: 100%;
+    }
+
+    .hero-right img {
+        height: auto;   /* طبيعي على الموبايل */
+        max-width: 100%;
+    }
+
+    .auth-card {
+        max-width: 100%;
+    }
+}

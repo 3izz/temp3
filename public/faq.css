@@ -1,0 +1,363 @@
+ 
+.navbar {
+            background-color: #F98149 !important;
+            width:100% !important;
+        }
+        /* Rectangle 852 */
+.navbar .izz{
+    color: #c2b6b0 !important;
+}
+.navbar .nav-links a {
+    color: var(--text-dark);
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.bg-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background-color: #FA824C; /* The main Orange color */
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            padding-bottom: 80px; /* Push text up slightly */
+            border-bottom-left-radius: 20% 10%;
+            border-bottom-right-radius: 20% 10%;
+        }
+
+        /* --- Decorative Elements (Dots & Circle) --- */
+        .decoration-dots {
+            position: absolute;
+            left: -40px;
+            top: 200px;
+            width: 60px;
+            height: 150px;
+            background-image: radial-gradient(#FA824C 20%, transparent 20%);
+            background-position: 0 0;
+            background-size: 10px 10px;
+            z-index: 0;
+            opacity: 0.8;
+        }
+
+        .decoration-circle {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 100px;
+            height: 100px;
+            border: 15px solid #FA824C;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* --- Main Card Container --- */
+        .faq-container {
+            background: white;
+            width: 100%;
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            position: relative;
+            margin-bottom: 50px;
+            margin: 0 auto 50px auto;
+            
+        }
+
+        /* --- Accordion Items --- */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        /* The Question Header */
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: #FA824C;
+        }
+
+        /* The Active State (when open) */
+        .faq-item.active .faq-question {
+            color: #FA824C;
+        }
+
+        /* The Toggle Icon (+ / -) */
+        .icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #FA824C;
+            width: 20px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        /* The Answer (Hidden by default) */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 20px; /* Indent for the vertical line */
+        }
+
+        /* The Text inside the answer */
+        .faq-answer p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px solid #FA824C; /* The orange vertical line */
+        }
+.header-bg {
+    background-color: var(--primary-orange);
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    /* Create the curve at the bottom */
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.header-bg h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+/* --- Main Layout --- */
+.main-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 140px; /* Push content down to overlap header */
+    z-index: 10;
+}
+
+/* --- Decorative Elements --- */
+.decor-dots {
+    position: absolute;
+    left: -60px;
+    top: 350px;
+    width: 100px;
+    height: 180px;
+    /* Creating dots using radial gradient */
+    background-image: radial-gradient(var(--primary-orange) 20%, transparent 20%);
+    background-position: 0 0;
+    background-size: 15px 15px;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.decor-circle {
+    position: absolute;
+    right: -80px;
+    bottom: 250px;
+    width: 120px;
+    height: 120px;
+    border: 15px solid var(--primary-orange);
+    border-radius: 50%;
+    z-index: 5;
+}
+
+/* --- Contact Form Card --- */
+.contact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 20;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    
+}
+.l5{
+    border: 2px solid#003B73 !important;
+}
+
+.input-group.full-width {
+    grid-column: span 2;
+    
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+input, select, textarea {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-blue);
+}
+
+::placeholder {
+    color: #B0B0B0;
+}
+
+.privacy-text {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.btn-submit {
+    background-color: #003B73 ;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #002244;
+}
+
+/* --- Footer Section --- */
+.contact-footer {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.footer-item {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-box {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Email Icon Style */
+.email-icon {
+    font-size: 3rem;
+    color: #FDBA74; /* Light orange */
+}
+.email-icon .arrow-badge {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background: #3B82F6;
+    color: white;
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Agent Icon Style */
+.agent-img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-item h3 {
+    color: var(--primary-orange);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-item p {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.link-blue {
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .input-group.full-width {
+        grid-column: span 1;
+    }
+
+    .contact-card {
+        padding: 30px;
+        margin: 0 20px 40px 20px;
+    }
+
+    .contact-footer {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .decor-dots, .decor-circle {
+        display: none; /* Hide decor on small screens */
+    }
+}
+     
+ 
+ 

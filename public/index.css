@@ -1,0 +1,288 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    color: #0f2942;
+    font-weight: 700;
+}
+
+.main-header .highlight {
+    color: #ff8c55;
+}
+
+/* Toolbar (Search, Tabs, Sort) */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px; /* Optional: if you want the bar itself contained */
+    background: transparent; /* Keeping it transparent based on image */
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: #eef1f6;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.search-bar i {
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    color: #555;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 30px;
+}
+
+.tab-link {
+    text-decoration: none;
+    color: #777;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.tab-link.active {
+    color: #ff8c55;
+}
+
+.tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Adjust based on container alignment */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff8c55;
+    border-radius: 2px;
+}
+
+/* Sort Dropdown */
+.sort-dropdown {
+    color: #555;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* GRID LAYOUT */
+.course-grid {
+    display: grid;
+    /* Responsive grid: min 280px wide, max fits available space */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* CARD STYLING */
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Top half (Blue) */
+.card-top {
+    background-color: #0a3d62; /* The specific dark blue */
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo handling */
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    /* In the real image these are specific logos, 
+       here we simulate them with colors/text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Simulating the logos using text/icons for the demo */
+.logo-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff; /* Fallback */
+}
+/* Specific brand colors for the 'logos' */
+.red .logo-text { color: #dd0031; }
+.orange .logo-text { color: #ff9900; }
+.green .logo-text { color: #41b883; }
+.yellow .logo-text { color: #f2c811; }
+.cyan .logo-text { color: #61dbfb; }
+.blue-yellow .logo-text { color: #ffe873; }
+
+
+/* Bottom half (White) */
+.card-body {
+    padding: 20px 20px 25px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-body p {
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes buttons down */
+}
+
+/* Action Buttons (Live Demo / Enroll) */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-outline {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ffccb3; /* Light orange border */
+    border-radius: 6px;
+    padding: 8px 0;
+    font-size: 0.7rem;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-outline:hover {
+    background-color: #fff5f0;
+}
+
+/* Download Button */
+.btn-download {
+    width: 100%;
+    background-color: #ff8c55;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(255, 140, 85, 0.3);
+}
+
+.btn-download:hover {
+    background-color: #ff7f40;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.page-num {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #fcece4; /* Light orange bg */
+    color: #ff8c55;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.page-num.active {
+    background-color: #ff8c55;
+    color: white;
+}
+
+.page-num:hover:not(.active) {
+    background-color: #ffdcb8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-bar {
+        width: 100%;
+    }
+    
+    .tabs {
+        justify-content: space-between;
+        font-size: 0.9rem;
+    }
+}

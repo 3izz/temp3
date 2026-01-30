@@ -1,0 +1,495 @@
+.navbar{
+    background-color: #003B73 !important;
+    width:100% !important;
+    
+}
+.about-section {
+            background-color: #003B6D; /* Deep Blue */
+            color: white;
+            padding: 60px 20px 100px 20px;
+            position: relative;
+            /* The specific curved corner */
+            border-bottom-left-radius: 150px;
+            overflow: hidden; /* Clips the decorative circle if it goes out */
+        }
+
+        .container3 {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        /* --- LEFT COLUMN (TEXT) --- */
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sub-heading {
+            color: #FF8C42; /* Orange */
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #d1d5db; /* Light gray */
+            line-height: 1.6;
+            margin-bottom: 50px;
+            max-width: 450px;
+        }
+
+        /* --- DECORATIVE DOTS --- */
+        .dots-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            width: fit-content;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #FF8C42;
+            border-radius: 50%;
+        }
+
+        /* --- RIGHT COLUMN (IMAGES) --- */
+        .image-content {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        /* The Orange Ring Background */
+        .decorative-ring {
+            position: absolute;
+            top: 40%;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            border: 25px solid #FF8C42;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        /* Image Grid Layout */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Specific Image Sizing to match Layout */
+        
+        /* 1. Tall image on left */
+        .image-card:nth-child(1) {
+            grid-row: 1 / 3; /* Spans 2 rows */
+        }
+        .image-card:nth-child(1) img {
+            height: 200px;
+        }
+
+        /* 2. Small image on top right */
+        .image-card:nth-child(2) img {
+            height: 140px;
+        }
+
+        /* 3. Wide image on bottom */
+        .image-card:nth-child(3) {
+            grid-column: 1 / 3; /* Spans full width */
+            margin-top: -0px; /* Pulls it up slightly to create the overlap look */
+            margin-left: 50px; /* Offsets it to the right */
+        }
+        .image-card:nth-child(3) img {
+            height: 220px;
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .about-section {
+                border-bottom-left-radius: 50px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            .decorative-ring {
+                display: none; /* Hide ring on small screens */
+            }
+            .image-card:nth-child(3) {
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 90%;
+            margin: 50px auto;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        /* --- Left Side: Visuals --- */
+        .visual-column {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* The Image Container */
+        .image-wrapper {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            z-index: 2; /* Keeps image above the orange ring */
+        }
+
+        /* The Main Photo */
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid #007bff; /* Bright Blue Border */
+        }
+
+        /* The Orange Ring (Donut Shape) */
+        .orange-ring {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 35px solid #ff8c42;
+            border-radius: 50%;
+            bottom: -40px;
+            right: -40px;
+            z-index: 1; /* Behind the image */
+        }
+
+        /* The Plus Pattern (+) */
+        .plus-pattern {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            color: #ff8c42;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 18px;
+            z-index: 3;
+        }
+
+        /* The Chevrons (Arrows) */
+        .chevrons {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .chevron {
+            width: 20px;
+            height: 20px;
+            border-top: 3px solid #003366;
+            border-right: 3px solid #003366;
+            transform: rotate(-45deg); /* Pointing up-right */
+        }
+
+        /* --- Right Side: Content --- */
+        .text-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .subtitle {
+            color: #004080;
+            font-weight: 700;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            color: #ff8c42;
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .image-wrapper {
+                width: 280px;
+                height: 280px;
+            }
+
+            .orange-ring {
+                width: 150px;
+                height: 150px;
+                border-width: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        .mv-section {
+            background-color: #00366d; /* Dark Blue matching the image */
+            color: #ffffff;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+
+        /* Container to center and constrain width */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap; /* Allows stacking on mobile */
+            justify-content: center; /* Centers content */
+            gap: 60px; /* Space between columns */
+        }
+
+        /* Individual Card Styling */
+        .mv-card {
+            flex: 1; /* Both cards take equal width */
+            min-width: 300px; /* Prevents them from getting too squished */
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Icon Styling */
+        .icon-wrapper {
+            margin-bottom: 20px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-wrapper i {
+            font-size: 5rem; 
+            color: #f36f24; /* The Orange Color */
+        }
+        
+        /* Specific styling for the target icon to add the white accent */
+        .fa-bullseye {
+            border: 2px solid #007bff; /* Slight blue border logic from image */
+            padding: 10px;
+            border-radius: 5px; /* Square edges */
+            background: transparent;
+        }
+
+        /* Heading Styling */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        h2 span {
+            color: #f36f24; /* Orange text highlight */
+        }
+
+        /* Paragraph Text Styling */
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 300;
+            opacity: 0.9; /* Slightly softer white */
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .mv-card {
+                margin-bottom: 40px;
+            }
+        }
+        .main-container {
+    width: 100%;
+    max-width: 100%;
+     
+}
+
+/* Typography & Headers */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.text-blue {
+    color: #1a416a; /* Dark Blue from image */
+}
+
+.text-orange {
+    color: #f78d52; /* Orange from image */
+}
+
+/* Layout Wrapper */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Navigation Buttons (< >) */
+.nav-btn {
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: 1px solid #7a8ba3; /* Blue-grey border */
+    border-radius: 6px;
+    color: #555;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #333;
+}
+
+/* Grid for Profiles */
+.profiles-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 30px;
+    max-width: 900px; /* Constraints the width of the cards */
+}
+
+/* Individual Card Styling */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+}
+
+.image-wrapper {
+    width: 100%;
+    height:auto;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    /* Optional: Add slight shadow like the advisors section */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #1a416a; /* Dark Blue */
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.role {
+    font-size: 0.65rem;
+    color: #8892a0; /* Grey text */
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+/* Spacing between the two sections */
+.spacer {
+    height: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profiles-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .carousel-wrapper {
+        position: relative;
+         
+    }
+
+    .nav-btn {
+        display: none; /* Hide arrows on mobile for cleaner look */
+    }
+}

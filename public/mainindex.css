@@ -1,0 +1,985 @@
+/* Skill your way up to success with us */
+.herotext{
+position: absolute;
+width: 894px;
+height: 298px;
+left: 148px;
+top: 294px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 100px;
+line-height: 108px;
+/* or 108% */
+letter-spacing: 0.5px;
+text-transform: capitalize;
+
+color: #003F7D;
+}
+/* 1. Global Variables & Base Styles */
+:root {
+    --main-blue: #003d82;
+    --main-orange: #ff9357;
+    --light-bg: #f4f7fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%;
+    flex-wrap: wrap; /* لجعلها متجاوبة */
+   position: relative;
+ 
+    align-items: stretch;
+    position: relative; /* لو في عناصر absolute داخلها */
+     
+}
+
+/* القسم الأيسر */
+.content-side {
+    flex: 1;
+    min-width: 400px;
+}
+
+.content-side h1 {
+    font-size: 3.5rem;
+    color: var(--main-blue);
+    line-height: 1.1;
+}
+
+.search-box {
+    /* Search box */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 24px;
+gap: 10px;
+
+width: 533px;
+height: 74px;
+
+/* Input field background */
+background: #F2F4F8;
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    padding: 10px;
+    outline: none;
+}
+
+.search-btn {
+    background: var(--main-blue);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tags .tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background: var(--light-bg);
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;          /* مهم لليوزر يحس إنه قابل للنقر */
+    transition: all 0.3s ease; /* حركة سلسة عند الضغط */
+}
+
+/* tag اللي افتراضيًا برتقالي */
+.tags .tag.orange {
+    background: var(--main-orange);
+    color: white;
+}
+
+/* التأثير لما يكون مختار */
+.tags .tag.active {
+    background: var(--main-orange); /* أو أي لون تحبه */
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(249, 129, 73, 0.6);
+}
+
+/* القسم الأيمن والـ SVGs */
+.image-side {
+    flex: 1;
+    position: relative;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    padding-top: 15%;
+     
+     
+    
+}
+.ll{
+    padding-top: 0%;
+
+}
+
+.svg-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.svg-item {
+    position: absolute;
+}
+
+/* توزيع الدوائر والـ SVGs */
+.circle-orange { bottom: 60%; right: 8%; z-index: 2; }
+.circle-blue { bottom: 0; left: 6%; z-index: 1; }
+.main-person { bottom: 0; left: 50%; transform: translateX(-50%); z-index: 3; }
+.main-person img { max-width: 100%; height: auto; }
+.main-tablet { bottom: 0; left: 10%; right: 10%; z-index: 10 !important; }
+
+/* البطاقات العائمة */
+.floating-cards {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* تجعل البطاقات فوق بعضها */
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 220px;
+}
+
+.best-seller-badge {
+    background: var(--main-orange);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-bottom: -10px;
+    margin-left: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+/* شاشات الموبايل */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content-side {
+        min-width: 100%;
+        margin-bottom: 50px;
+    }
+    .content-side h1 { font-size: 2.5rem; }
+    .image-side {
+         
+        padding-top: 50%;
+    }
+}
+.container {
+    margin: 100px;
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+
+  /* الحاوية التي تجمع الكلمة والعلامة */
+  .label-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  /* العلامة البنفسجية (تكون ظاهرة دائماً) */
+  .purple-badge {
+    position: absolute;
+    bottom: 100%; /* تظهر فوق النص */
+    left: 50%;
+    transform: translateX(-50%) scale(1); /* حجمها الطبيعي */
+    background-color: #a855f7; /* اللون البنفسجي */
+    color: white;
+    min-width: 30px;
+    height: 30px;
+    padding: 2px 8px;
+    border-radius: 8px; /* زوايا منحنية */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة تكبير مرنة */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: nowrap;
+  }
+
+  /* السهم الصغير أسفل العلامة */
+  .purple-badge::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #a855f7 transparent transparent transparent;
+  }
+
+  /* النص الذي بداخل العلامة (يكون مخفياً أو صغيراً ويظهر عند الهوفر) */
+  .badge-text {
+    display: none; /* مخفي في البداية */
+    margin-right: 5px;
+  }
+
+  /* تأثير الهوفر على الحاوية أو العلامة */
+  .label-wrapper:hover .purple-badge {
+    transform: translateX(-50%) scale(1.3); /* تكبير العلامة بنسبة 30% */
+    background-color: #9333ea; /* تغميق اللون قليلاً */
+    z-index: 10;
+  }
+
+  /* إظهار النص عند الهوفر */
+  .label-wrapper:hover .badge-text {
+    display: inline;
+  }
+  :root {
+        --main-bg: #102C57;      /* اللون الأزرق الغامق للخلفية */
+        --accent-orange: #E67E48; /* اللون البرتقالي للعنوان */
+        --border-color: #D97706;  /* لون حدود المربعات */
+        --text-white: #ffffff;
+        --card-bg: #ffffff;
+    }
+ 
+    /* الحاوية الرئيسية */
+    .roadmap-container {
+        background-color: var(--main-bg);
+        border-radius: 20px;
+        padding: 60px 20px 40px 20px;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        color: var(--text-white);
+    }
+
+    /* عنوان "How It Works" */
+    .roadmap-header {
+        background-color: var(--accent-orange);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 15px 15px 0 0; /* تدوير الزوايا العلوية فقط أو الكل حسب الرغبة */
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: absolute;
+        top: -25px; /* لرفع العنوان للأعلى قليلاً خارج الصندوق */
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        white-space: nowrap;
+    }
+
+    /* تنسيق العناصر */
+    .roadmap-flex {
+        display: flex;
+        align-items: center; /* محاذاة عمودية */
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap; /* للسماح بالنزول للأسفل في الشاشات الصغيرة */
+    }
+
+    /* الكارت الأبيض (البداية والنهاية) */
+    .white-card {
+        background-color: var(--card-bg);
+        border-radius: 20px;
+        padding: 20px;
+        width: 140px;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: #333;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        flex-shrink: 0;
+    }
+
+    .white-card h3 {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--accent-orange);
+    }
+
+    .white-card img {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+        object-fit: contain;
+    }
+
+    /* خطوات الوسط (01 - 06) */
+    .step-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 120px;
+    }
+
+    .step-number {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .icon-box {
+        border: 2px solid var(--border-color);
+        border-radius: 15px;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+    }
+    .up{
+    margin-top: 50px;
+    }
+
+    .icon-box:hover {
+        transform: scale(1.05);
+        background-color: rgba(255,255,255,0.05);
+    }
+
+    .icon-box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .step-label {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        color: #d1d5db;
+    }
+
+    /* السهم بين الخطوات */
+    .arrow-separator {
+        color: var(--border-color);
+        font-size: 1.5rem;
+        font-weight: lighter;
+    }
+
+    /* نقاط الزينة في الزاوية */
+    .dots-decoration {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+    .dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent-orange);
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+
+    /* التجاوب مع الموبايل */
+    @media (max-width: 1024px) {
+        .roadmap-flex {
+            justify-content: center;
+            gap: 30px;
+        }
+        .arrow-separator {
+            transform: rotate(90deg); /* تدوير السهم للأسفل في الموبايل */
+            display: none; /* أو إخفاؤه لتوفير المساحة */
+        }
+    }
+     .main-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+        }
+
+        /* النصف الأيسر (فارغ أو لمحتوى آخر) */
+        .left-half {
+            flex: 1;
+            background-color: #f0f0f0; /* لون رمادي للتوضيح فقط */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #888;
+        }
+
+        /* النصف الأيمن (يحتوي الكاروسيل) */
+        .right-half {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- تصميم الكاروسيل --- */
+        .carousel-container {
+            width: 100%;
+            max-width: 500px; /* أقصى عرض للكاروسيل */
+            position: relative;
+        }
+
+        .carousel-slide {
+            display: none; /* إخفاء الشرائح افتراضياً */
+            animation: fadeEffect 1s;
+        }
+
+        .carousel-slide.active {
+            display: block; /* إظهار الشريحة النشطة */
+        }
+
+        /* بطاقة المحتوى (مثل الصورة) */
+        .slide-card {
+            background-color: #FFF5EE; /* لون الخلفية البيج الفاتح */
+            border: 2px solid #0099FF; /* الإطار الأزرق */
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 250px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* النصوص */
+        .text-content {
+            flex: 1;
+            text-align: left; /* جعل النص يساراً مثل الصورة */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .logo i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .title-main {
+            font-size: 2rem;
+            color: #333;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .title-highlight {
+            font-size: 2rem;
+            color: #FF8C42; /* اللون البرتقالي */
+            font-weight: bold;
+            display: block;
+        }
+
+        /* الصورة التوضيحية داخل الكارت */
+        .illustration {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+            /* يمكنك استبدال الرابط بصورتك الخاصة */
+        }
+
+        /* مؤشرات الكاروسيل (الشرط أسفل الكارت) */
+        .indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .dot {
+            height: 6px;
+            width: 30px;
+            background-color: #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #FF8C42; /* اللون البرتقالي عند التفعيل */
+            width: 40px;
+        }
+
+        /* تأثير الحركة */
+        @keyframes fadeEffect {
+            from {opacity: 0.6;} 
+            to {opacity: 1;}
+        }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .slide-card {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .text-content {
+                text-align: center;
+            }
+        }
+        /* Container for the grid */
+        .category-container {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+
+    /* عنصرين جنب بعض دايمًا */
+    grid-template-columns: repeat(2, 1fr);
+
+    /* المسافات */
+    column-gap: 40px;
+    row-gap: 60px;
+}
+
+
+        /* Individual Item Card */
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Top section holding Number + Icon */
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+            width: 100%;
+        }
+
+        /* The Blue Number */
+        .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #003366; /* Dark Blue */
+            margin-right: 20px; 
+            /* Optional: Adjust position to match image exactly */
+            transform: translateY(-10px); 
+        }
+
+        /* The Orange Icon */
+        .icon {
+            font-size: 4rem; /* Size of the icon */
+            color: #ff8c42; /* Orange color */
+            /* Stroke effect to mimic line-art style */
+            -webkit-text-stroke: 1px #ff8c42;
+            color: transparent; 
+            -webkit-text-stroke: 2px #ff8c42;
+        }
+
+        /* Special handling to make FontAwesome icons look like outlines if needed,
+           or just use standard coloring. For this demo, solid orange is safer 
+           unless we use specific SVG outlines. Let's stick to solid for better compatibility. */
+        .icon-solid {
+            color: #ffffff;
+            stroke: #ff8c42;
+            stroke-width: 20px;
+            /* Resetting the transparent hack for standard FontAwesome usage */
+            -webkit-text-stroke: 0;
+            color: #fff;
+            
+            /* Creating the outline effect using CSS shadows/borders is hard for fonts.
+               Here we will use the regular icons but colored Orange. */
+            color: transparent;
+            -webkit-text-stroke: 2px #fe8535;
+        }
+        
+        /* Alternative Simple Icon Styling (Cleaner) */
+        .simple-icon {
+            font-size: 4.5rem;
+            color: #fe8535;
+        }
+
+        /* The Text Label */
+        .label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 600px) {
+            .category-container {
+        grid-template-columns: 1fr;
+            }
+            .number {
+                font-size: 1.5rem;
+            }
+            .simple-icon {
+                font-size: 3.5rem;
+            }
+        }
+         .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* Header Styling */
+        .section-header {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .text-blue { color: var(--primary-blue); }
+        .text-orange { color: var(--primary-orange); }
+
+        /* Main Content Layout */
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* Left Side: Illustration */
+        .illustration-side {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .illustration-side img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            /* Using a drop shadow to simulate depth if image is transparent */
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+        }
+
+        /* Right Side: Stats Grid */
+        .stats-side {
+            flex: 1;
+            min-width: 300px;
+            position: relative; /* For the dots decoration */
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Card Styling */
+        .card1 {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--main-orange);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-text i {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+
+        /* Specific Layout for the bottom "70%" card */
+        .card.wide {
+            grid-column: span 2; /* Span across both columns */
+            flex-direction: row; /* Horizontal layout */
+            align-items: center;
+            gap: 30px;
+        }
+
+        .card.wide .card-number {
+            margin-bottom: 0;
+            color: var(--primary-blue); /* The 70% is blue in the image */
+        }
+        
+        .card.wide .card-text {
+             max-width: 200px;
+        }
+
+        /* Decorative Dots Pattern Background */
+        .dots-decoration {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            background-image: radial-gradient(circle, #b0c4de 2px, transparent 2.5px);
+            background-size: 20px 20px;
+            opacity: 0.6;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                width: 100%;
+            }
+
+            .section-header {
+                font-size: 2rem;
+            }
+            
+            .card.wide {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+  .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Styling the "Our Certifications" text colors */
+        .title-dark { color: #1a416a; }
+        .title-orange { color: #ff8a50; margin-left: 8px; }
+
+        .cert-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap; /* Allows images to stack on mobile */
+            max-width: 100%;
+        }
+
+        .cert-item {
+            flex: 0 1 200px; /* Base width for each image */
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect to make it interactive */
+        .cert-item:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Optional: if your images have white backgrounds, 
+               this ensures they look uniform */
+            object-fit: contain; 
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .cert-wrapper { gap: 20px; }
+            .cert-item { flex: 0 1 140px; }
+            .section-title { font-size: 26px; }
+        }
+        /* ===== Carousel Wrapper ===== */
+.carousel {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Track */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* كل كرت داخل الكيرسل */
+.carousel .card {
+    min-width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+/* ===== Card Content ===== */
+.carousel .top-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.carousel .profile-img img {
+    width: 150px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.carousel .info h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+}
+
+.carousel .subtitle {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #ff8c42;
+    font-weight: 500;
+}
+
+.carousel .rating {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.carousel .stars {
+    color: #ffb400;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.carousel .review-count {
+    color: #666;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.carousel .stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.carousel .stat-item {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-size: 14px;
+}
+
+.carousel .stat-item .icon {
+    margin-right: 8px;
+    color: #ff8c42;
+}
+
+.carousel .description {
+    color: #555;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* ===== Navigation Buttons ===== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
